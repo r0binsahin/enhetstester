@@ -1,5 +1,6 @@
 import { addTodo, removeAllTodos } from "./functions";
 import { Todo } from "./models/Todo";
+
 let todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
 
 //1
@@ -10,24 +11,21 @@ export function init() {
 }
 
 exports.init();
+
 //2
-export function init2() {
-  (document.getElementById("newTodoForm") as HTMLFormElement)?.addEventListener(
-    "submit",
-    (e: SubmitEvent) => {
-      e.preventDefault();
+(document.getElementById("newTodoForm") as HTMLFormElement)?.addEventListener(
+  "submit",
+  (e: SubmitEvent) => {
+    e.preventDefault();
 
-      let todoText: string = (
-        document.getElementById("newTodoText") as HTMLInputElement
-      ).value;
-      console.log("Todos when creating", todos);
+    let todoText: string = (
+      document.getElementById("newTodoText") as HTMLInputElement
+    ).value;
+    console.log("Todos when creating", todos);
 
-      exports.createNewTodo(todoText, todos);
-    }
-  );
-}
-
-exports.init2();
+    exports.createNewTodo(todoText, todos);
+  }
+);
 
 //3
 export function createNewTodo(todoText: string, todos: Todo[]) {
@@ -40,12 +38,9 @@ export function createNewTodo(todoText: string, todos: Todo[]) {
   }
 }
 
-export function setToLS(todos: Todo[]) {
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
-
+//4
 export function createHtml(todos: Todo[]) {
-  exports.setToLS(todos);
+  localStorage.setItem("todos", JSON.stringify(todos));
 
   let todosContainer: HTMLUListElement = document.getElementById(
     "todos"
@@ -70,11 +65,13 @@ export function createHtml(todos: Todo[]) {
   }
 }
 
+//5
 export function toggleTodo(todo: Todo) {
   exports.changeTodo(todo);
   exports.createHtml(todos);
 }
 
+//6
 export function displayError(error: string, show: boolean) {
   let errorContainer: HTMLDivElement = document.getElementById(
     "error"
@@ -89,6 +86,7 @@ export function displayError(error: string, show: boolean) {
   }
 }
 
+//7
 export function clearTodos(todos: Todo[]) {
   removeAllTodos(todos);
   createHtml(todos);
@@ -96,8 +94,11 @@ export function clearTodos(todos: Todo[]) {
 
 // denna fil tappade kontakten med changeTodo och vägrade att känna till den. Jag fick fel kod om att changeTodo inte var en functions. Den blev också suddig högst upp på import delen. Så jag flyttade den from filen functions.ts till main.ts. Jag flyttar även dess test till main.ts.test
 
+//8
 export function changeTodo(todo: Todo) {
   todo.done = !todo.done;
 }
 
-//exports.createHtml(todos);
+addEventListener("DOMContentLoaded", () => {
+  createHtml(todos);
+});
