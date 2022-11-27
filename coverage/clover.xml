@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1669277553382" clover="3.2.0">
+  <project timestamp="1669277553382" name="All files">
+    <metrics statements="13" coveredstatements="7" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="2" elements="19" coveredelements="9" complexity="0" loc="13" ncloc="13" packages="2" files="2" classes="2"/>
+    <package name="ts">
+      <metrics statements="11" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="functions.ts" path="/Users/robinsahin/Downloads/fed22-test-assignment-unittest-main/src/ts/functions.ts">
+        <metrics statements="11" coveredstatements="5" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="ts.models">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Todo.ts" path="/Users/robinsahin/Downloads/fed22-test-assignment-unittest-main/src/ts/models/Todo.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
